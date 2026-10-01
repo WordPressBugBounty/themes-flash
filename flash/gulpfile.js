@@ -17,7 +17,7 @@ var autoprefixer = require( 'gulp-autoprefixer' ); // Prefixes CSS.
 var uglifycss = require( 'gulp-uglifycss' ); // Minifies CSS.
 var rtlcss = require( 'gulp-rtlcss' ); // Generates RTL CSS.
 var lec = require( 'gulp-line-ending-corrector' ); //
-var sass = require( 'gulp-sass' ); // Compiles sass into CSS.
+var sass = require( 'gulp-sass' )( require( 'sass' ) ); // Compiles sass into CSS.
 
 // JS Plugins
 var uglify = require( 'gulp-uglify' ); // Minify JS.
@@ -125,7 +125,16 @@ var paths = {
 			'!*.md',
 			'!gulpfile.js',
 			'!composer.lock',
-			'!phpcs.xml'
+			'!phpcs.xml',
+			'!tests',
+			'!tests/**',
+			'!playwright.config.ts',
+			'!test-results',
+			'!test-results/**',
+			'!playwright-report',
+			'!playwright-report/**',
+			'!blob-report',
+			'!blob-report/**'
 		],
 		dest: './dist'
 	}
